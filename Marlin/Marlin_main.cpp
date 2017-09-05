@@ -8061,6 +8061,7 @@ void report_current_position() {
   #endif
 }
 
+#define M114_DETAIL
 #ifdef M114_DETAIL
 
   void report_xyze(const float pos[XYZE], const uint8_t n = 4, const uint8_t precision = 3) {

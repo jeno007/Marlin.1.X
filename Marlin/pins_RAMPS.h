@@ -60,12 +60,12 @@
 #ifdef IS_RAMPS_13
   #define SERVO0_PIN        7 // RAMPS_13 // Will conflict with BTN_EN2 on LCD_I2C_VIKI
 #else
-  #define SERVO0_PIN       11
+  #define SERVO0_PIN       2 // 11
 #endif
-#define SERVO1_PIN          6
-#define SERVO2_PIN          5
+#define SERVO1_PIN          -1 // 6
+#define SERVO2_PIN          -1 // 5
 #ifndef SERVO3_PIN
-  #define SERVO3_PIN        4
+  #define SERVO3_PIN        -1 // 4
 #endif
 
 //
@@ -73,7 +73,7 @@
 //
 #define X_MIN_PIN           3
 #ifndef X_MAX_PIN
-  #define X_MAX_PIN         2
+  #define X_MAX_PIN         -1 // 2
 #endif
 #define Y_MIN_PIN          14
 #define Y_MAX_PIN          15
@@ -161,6 +161,9 @@
 #ifndef RAMPS_D10_PIN
   #define RAMPS_D10_PIN 10
 #endif
+#ifndef RAMPS_D12_PIN
+#define RAMPS_D12_PIN 12
+#endif
 
 #define HEATER_0_PIN     RAMPS_D10_PIN
 
@@ -172,7 +175,9 @@
   #define FAN_PIN        RAMPS_D8_PIN
 #elif ENABLED(IS_RAMPS_EEB)                    // Hotend, Hotend, Bed
   #define HEATER_1_PIN   RAMPS_D9_PIN
-  #define HEATER_BED_PIN RAMPS_D8_PIN
+  #define HEATER_BED_PIN RAMPS_D12_PIN
+  #define FAN_PIN        4                     // IO pin. Buffer needed
+  #define FAN1_PIN       5                     // IO pin. Buffer needed
 #elif ENABLED(IS_RAMPS_EFF)                    // Hotend, Fan, Fan
   #define FAN_PIN        RAMPS_D9_PIN
   #define FAN1_PIN       RAMPS_D8_PIN
@@ -190,23 +195,24 @@
 
 #ifndef FAN_PIN
   #define FAN_PIN 4      // IO pin. Buffer needed
+  #define FAN1_PIN 5      // IO pin. Buffer needed
 #endif
 
 //
 // Misc. Functions
 //
-#define SDSS               53
-#define LED_PIN            13
+#define SDSS               -1 // 53
+#define LED_PIN            -1 // 13
 
 #ifndef FILWIDTH_PIN
-  #define FILWIDTH_PIN      5   // Analog Input on AUX2
+  #define FILWIDTH_PIN      -1 // 5   // Analog Input on AUX2
 #endif
 
 // define digital pin 4 for the filament runout sensor. Use the RAMPS 1.4 digital input 4 on the servos connector
-#define FIL_RUNOUT_PIN      4
+#define FIL_RUNOUT_PIN      -1 // 4
 
 #ifndef PS_ON_PIN
-  #define PS_ON_PIN        12
+  #define PS_ON_PIN        -1 // 12
 #endif
 
 #if ENABLED(CASE_LIGHT_ENABLE) && !PIN_EXISTS(CASE_LIGHT) && !defined(SPINDLE_LASER_ENABLE_PIN)
