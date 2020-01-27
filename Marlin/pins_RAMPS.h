@@ -318,7 +318,7 @@
 //
 // Misc. Functions
 //
-#define SDSS               -1 // 53
+#define SDSS               53
 #define LED_PIN            -1 // 13
 
 #ifndef FILWIDTH_PIN
