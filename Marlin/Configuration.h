@@ -862,7 +862,7 @@
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 #define INVERT_X_DIR false
-#define INVERT_Y_DIR false
+#define INVERT_Y_DIR true
 #define INVERT_Z_DIR false
 
 // @section extruder
@@ -1195,7 +1195,7 @@
  *    +-------------->X     +-------------->X     +-------------->Y
  *     XY_SKEW_FACTOR        XZ_SKEW_FACTOR        YZ_SKEW_FACTOR
  */
-//#define SKEW_CORRECTION
+#define SKEW_CORRECTION
 
 #if ENABLED(SKEW_CORRECTION)
   // Input all length measurements here:
@@ -1205,7 +1205,7 @@
 
   // Or, set the default skew factors directly here
   // to override the above measurements:
-  // #define XY_SKEW_FACTOR 0.0
+  #define XY_SKEW_FACTOR 0.0
 
   //#define SKEW_CORRECTION_FOR_Z
   #if ENABLED(SKEW_CORRECTION_FOR_Z)
