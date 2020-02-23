@@ -95,11 +95,11 @@
   #define X_CS_PIN         53
 #endif
 
-#define Y_STEP_PIN         38 //59 //44 //36 //44 // 60
-#define Y_DIR_PIN          56 //63 //42 //34 //42 // 61
-#define Y_ENABLE_PIN       30 //56 not used
+#define Y_STEP_PIN         60
+#define Y_DIR_PIN          36 // pin 61 HW fault
+#define Y_ENABLE_PIN       56 //not used
 #ifndef Y_CS_PIN
-  #define Y_CS_PIN         44 //49
+  #define Y_CS_PIN         49
 #endif
 
 #define Z_STEP_PIN         46
